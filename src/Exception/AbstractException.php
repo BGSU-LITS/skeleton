@@ -11,8 +11,8 @@ namespace App\Exception;
 /**
  * An exception for when a resource could not be found.
  */
-abstract class AbstractExtension extends \Exception
+abstract class AbstractException extends \Exception
 {
-    protected $title = 'Unexpected Error';
-    protected $message = 'Your request could not be completed.';
+    public $title = 'Unexpected Error';
+    public $message = 'Your request could not be completed.';
 }

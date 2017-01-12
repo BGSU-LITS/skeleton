@@ -13,6 +13,6 @@ namespace App\Exception;
  */
 class NotFoundException extends AbstractException
 {
-    protected $title = 'Not Found';
-    protected $message = 'The requested resource could not be found.';
+    public $title = 'Not Found';
+    public $message = 'The requested resource could not be found.';
 }

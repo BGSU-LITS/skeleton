@@ -13,6 +13,6 @@ namespace App\Exception;
  */
 class RequestException extends AbstractException
 {
-    protected $title = 'Invalid Request';
-    protected $message = 'Please check your request and try again.';
+    public $title = 'Invalid Request';
+    public $message = 'Please check your request and try again.';
 }
