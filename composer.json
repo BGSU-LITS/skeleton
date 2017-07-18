@@ -16,7 +16,8 @@
         "data-uri/twig-extension": "^1.0",
         "m1/env": "^2.0",
         "aura/html": "2.x-dev",
-        "monolog/monolog": "^1.19"
+        "monolog/monolog": "^1.19",
+        "twig/twig": "^1.18"
     },
     "autoload": {
         "psr-4": {

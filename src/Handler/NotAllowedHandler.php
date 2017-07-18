@@ -41,7 +41,7 @@ class NotAllowedHandler extends \Slim\Handlers\NotAllowed
         return $this->view->fetch('error.html.twig', [
             'title' => 'Method Not Allowed',
             'message' =>
-                '<p>You must use one of these methods: '.
+                '<p>You must use one of these methods: ' .
                 implode(', ', $methods) . '</p>'
         ]);
     }
