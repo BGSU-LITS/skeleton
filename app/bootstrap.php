@@ -22,6 +22,20 @@ if (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on') {
 // Create new Slim container with included settings.
 $container = new \Slim\Container(['settings' => require 'settings.php']);
 
+// Create mock environment if started from a command line interface.
+if (PHP_SAPI === 'cli') {
+    $container['environment'] = \Slim\Http\Environment::mock([
+        // Use POST as the request method.
+        'REQUEST_METHOD' => 'POST',
+
+        // Use the basename of the command as the path to execute.
+        'REQUEST_URI' => '/' . basename(array_shift($argv)),
+
+        // Accept JSON input.
+        'HTTP_ACCEPT' => 'application/json'
+    ]);
+}
+
 // Create new Slim application with the container.
 $app = new \Slim\App($container);
 

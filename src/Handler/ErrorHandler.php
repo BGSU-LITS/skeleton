@@ -30,7 +30,7 @@ class ErrorHandler extends \Slim\Handlers\Error
 
     /**
      * Whether the application is in debug mode.
-     * @var boolean
+     * @var bool
      */
     private $debug;
 
@@ -38,13 +38,14 @@ class ErrorHandler extends \Slim\Handlers\Error
      * Construct the action with objects and configuration.
      * @param LoggerInterface $logger PSR-3 logger.
      * @param Twig $view View renderer.
-     * @param boolean $debug Whether the application is in debug mode.
+     * @param bool $debug Whether the application is in debug mode.
      */
     public function __construct(LoggerInterface $logger, Twig $view, $debug)
     {
         $this->logger = $logger;
         $this->view = $view;
         $this->debug = $debug;
+        $this->displayErrorDetails = PHP_SAPI === 'cli';
     }
 
     /**
@@ -82,7 +83,7 @@ class ErrorHandler extends \Slim\Handlers\Error
 
     /**
      * Writes a throwable object to the error log.
-     * @param throwable $throwable The throwable object to write.
+     * @param object $throwable The throwable object to write.
      */
     protected function writeToErrorLog($throwable)
     {
