@@ -2,7 +2,7 @@
 /**
  * Application Handlers
  * @author John Kloor <kloor@bgsu.edu>
- * @copyright 2017 Bowling Green State University Libraries
+ * @copyright 2019 Bowling Green State University Libraries
  * @license MIT
  */
 
@@ -17,7 +17,7 @@ $container['errorHandler'] = function (Container $container) {
     return new ErrorHandler(
         $container[LoggerInterface::class],
         $container[Twig::class],
-        $container['settings']['debug']
+        $container['settings']['app']['debug']
     );
 };
 

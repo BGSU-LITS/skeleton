@@ -2,7 +2,7 @@
 /**
  * Error Handler Class
  * @author John Kloor <kloor@bgsu.edu>
- * @copyright 2017 Bowling Green State University Libraries
+ * @copyright 2019 Bowling Green State University Libraries
  * @license MIT
  */
 
@@ -30,7 +30,7 @@ class ErrorHandler extends \Slim\Handlers\Error
 
     /**
      * Whether the application is in debug mode.
-     * @var bool
+     * @var boolean
      */
     private $debug;
 
@@ -38,7 +38,7 @@ class ErrorHandler extends \Slim\Handlers\Error
      * Construct the action with objects and configuration.
      * @param LoggerInterface $logger PSR-3 logger.
      * @param Twig $view View renderer.
-     * @param bool $debug Whether the application is in debug mode.
+     * @param boolean $debug Whether the application is in debug mode.
      */
     public function __construct(LoggerInterface $logger, Twig $view, $debug)
     {
@@ -83,7 +83,7 @@ class ErrorHandler extends \Slim\Handlers\Error
 
     /**
      * Writes a throwable object to the error log.
-     * @param object $throwable The throwable object to write.
+     * @param throwable $throwable The throwable object to write.
      */
     protected function writeToErrorLog($throwable)
     {

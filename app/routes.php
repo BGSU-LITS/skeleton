@@ -2,7 +2,7 @@
 /**
  * Application Routes
  * @author John Kloor <kloor@bgsu.edu>
- * @copyright 2017 Bowling Green State University Libraries
+ * @copyright 2019 Bowling Green State University Libraries
  * @license MIT
  */
 
@@ -22,4 +22,4 @@ $container[IndexAction::class] = function (Container $container) {
     );
 };
 
-$app->get('/', IndexAction::class);
+$app->get('/', IndexAction::class)->setName('index');

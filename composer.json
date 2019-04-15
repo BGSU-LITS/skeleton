@@ -10,14 +10,13 @@
     ],
     "require": {
         "slim/slim": "^3.0",
-        "slim/csrf": "^0.7.0",
-        "slim/flash": "^0.1.0",
+        "slim/csrf": "^0.8.0",
+        "slim/flash": "^0.4.0",
         "slim/twig-view": "^2.1",
         "data-uri/twig-extension": "^1.0",
-        "m1/env": "^2.0",
+        "symfony/yaml": "^3.3",
         "aura/html": "^2.5",
-        "monolog/monolog": "^1.19",
-        "twig/twig": "^1.18"
+        "monolog/monolog": "^1.19"
     },
     "autoload": {
         "psr-4": {

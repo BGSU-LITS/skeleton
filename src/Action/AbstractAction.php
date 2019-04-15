@@ -2,7 +2,7 @@
 /**
  * Abstract Action Class
  * @author John Kloor <kloor@bgsu.edu>
- * @copyright 2017 Bowling Green State University Libraries
+ * @copyright 2019 Bowling Green State University Libraries
  * @license MIT
  */
 
@@ -65,6 +65,15 @@ abstract class AbstractAction
      */
     abstract public function __invoke(Request $req, Response $res, array $args);
 
+    /**
+     * Gets flash messages from previous request formatted for template.
+     *
+     * Each message is an array with two items:
+     * 'level' is either the string 'success' or 'danger'.
+     * 'message' is the string text of the message.
+     *
+     * @return array The flash messages from the previous request.
+     */
     protected function messages()
     {
         $result = [];
@@ -85,6 +94,11 @@ abstract class AbstractAction
         return $result;
     }
 
+    /**
+     * Validates that the CSRF token in the request is valid.
+     * @param Request $req The request for the action.
+     * @throws RequestException The CSRF token is invalid.
+     */
     protected function validateCsrf(Request $req)
     {
         if ($req->getAttribute('csrf_failed')) {
